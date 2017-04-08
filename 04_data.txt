@@ -447,25 +447,25 @@ Una vez que tiene suficientes datos, quiere calcular la ((correlación))
 entre su ardillamiento y cada uno de los eventos e, idealmente, aprender
 algo útil de esas correlaciones.
 
-(((correlation)))_Correlation_ is a measure of ((dependence)) between
-((variable))s (“variables” in the statistical sense, not the
-JavaScript sense). It is usually expressed as a coefficient that
-ranges from -1 to 1. Zero correlation means the variables are not
-related, whereas a correlation of one indicates that the two are
-perfectly related—if you know one, you also know the other. Negative
-one also means that the variables are perfectly related but that they
-are opposites—when one is true, the other is false.
+(((correlación)))_Correlación_ es una medida de ((dependencia)) entre
+((variable))s (“variables” en el sentido estadístico, no en el sentido de
+JavaScript). Por lo general se expresa como un coeficiente de rango de
+-1 a 1. La correlación cero significa que las variables no son
+relacionadas, mientras la correlación de una indica que las dos son
+perfectamente relacionadas; si conoces una, también conoces la otra.
+Negativo también significa que las variables están perfectamente relacionadas
+pero que son opuestos cuando una es verdadera, la otra es falsa.
 
-(((phi coefficient)))For binary (Boolean) variables, the _phi_
-coefficient (_ϕ_) provides a good measure of correlation and is
-relatively easy to compute. To compute _ϕ_, we need a ((table)) _n_
-that contains the number of times the various combinations of the two
-variables were observed. For example, we could take the event of
-eating ((pizza)) and put that in a table like this:
+(((coeficiente phi)))Para las variables binarias (Booleanas), el coeficiente
+_phi_ (_ϕ_) proporciona una buena medida de correlación y es relativamente
+fácil de calcular. Para calcular _ϕ_, necesitamos una ((tabla)) _n_ que
+contiene el número de veces en el cual las varias combinaciones de las dos
+variables fueron observadas. Por ejemplo, podemos tomar el evento de
+comer ((pizza)) y poner eso en una tabla como ésta:
 
 image::img/pizza-squirrel.svg[alt="Eating pizza versus turning into a squirrel",width="7cm"]
 
-_ϕ_ can be computed using the following formula, where _n_ refers to the table:
+_ϕ_ puede ser calculado usando la fórmula siguiente, donde _n_ se refiere a la tabla:
 
 ifdef::html_target[]
 
@@ -492,22 +492,22 @@ pass:[\begin{equation}\varphi = \frac{n_{11}n_{00}-n_{10}n_{01}}{\sqrt{n_{1\bull
 
 endif::tex_target[]
 
-The notation (!html _n_~01~!)(!tex pass:[$n_{01}$]!) indicates the
-number of measurements where the first variable (squirrelness) is false
-(0) and the second variable (pizza) is true (1). In this
-example, (!html _n_~01~!)(!tex pass:[$n_{01}$]!) is 9.
+La notación (!html _n_~01~!)(!tex pass:[$n_{01}$]!) indica el
+numero de medidas donde el primer valor (ardilla) es falso
+(0) y la segunda variable (pizza) es verdadera (1). En este
+ejemplo, (!html _n_~01~!)(!tex pass:[$n_{01}$]!) es 9.
 
-The value (!html _n_~1•~!)(!tex pass:[$n_{1\bullet}$]!) refers to the
-sum of all measurements where the first variable is true, which is 5
-in the example table. Likewise, (!html _n_~•0~!)(!tex pass:[$n_{\bullet0}$]!)
-refers to the sum of the measurements where the second variable is false.
+El valor (!html _n_~1•~!)(!tex pass:[$n_{1\bullet}$]!) se refiere a
+la suma de todas las medidas donde la primera variable es verdadera, la cual es
+5 en la tabla de ejemplo. Igualmente, (!html _n_~•0~!)(!tex pass:[$n_{\bullet0}$]!)
+Se refiere a la suma de las medidas donde la segunda variable es falsa.
 
-(((correlation)))(((phi coefficient)))So for the pizza table, the part
-above the division line (the dividend) would be 1×76 - 4×9 = 40, and
-the part below it (the divisor) would be the square root of
-5×85×10×80, or (!html √340000!)(!tex pass:[$\sqrt{340000}$]!). This
-comes out to _ϕ_ ≈ 0.069, which is tiny. Eating ((pizza)) does not
-appear to have influence on the transformations.
+(((correlación)))(((coeficiente phi)))Para la tabla de la pizza, la parte de
+arriba de la línea de división (el dividendo) sería 1×76 - 4×9 = 40, y
+la parte debajo (el divisor) sería la raíz cuadrada de
+5×85×10×80, o (!html √340000!)(!tex pass:[$\sqrt{340000}$]!). Este
+sale según _ϕ_ ≈ 0.069, el cual es diminuto. Comer ((pizza)) no
+parece tener influencia en las transformaciones.
 
 == Computing correlation ==
 
