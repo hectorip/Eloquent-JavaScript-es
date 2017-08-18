@@ -4,11 +4,11 @@
 = Introducción =
 
 Este libro trata de como hacer que las ((computadoras)) hagan lo que tú quieres
-que hagan. Las computadoras son tan comunes como los desatornilladores hoy en día,
+que hagan. Las computadoras son tan comunes como los destornilladores hoy en día,
 pero tienen mucha más complejidad oculta y, por lo tanto, son más difíciles de
 operar y entender. Para muchos siguen siendo cosas extrañas, un poco amenazadoras.
 
-image::img/generated/computer.png[alt="Comunicándose con una computadora"]
+image::img/computer.svg[alt="Comunicándose con una computadora"]
 
 (((interfaz gráfica de usuario)))Hemos encontrado dos formas efectivas
 de cerrar la brecha ente nosotros, suaves organismos biológicos
@@ -18,14 +18,14 @@ usar nuestros sentidos del mundo físico y construir interfaces que
 imitan ese mundo y nos permiten manipular figuras en una pantalla
 con nuestros dedos. Esto funciona muy bien para interacciones casuales con la máquina.
 
-(((lenguage de programación)))Pero aún no hemos encontrado una buena forma
+(((lenguaje de programación)))Pero aún no hemos encontrado una buena forma
 de usar la interfaz gráfica para comunicar a la computadora cosas que
 el diseñador de interfaces no anticipó. Para interfaces abiertas,
 como indicarle a la computadora que ejecute tareas arbitrarias,
 hemos tenido más suerte con otra estrategia, que hace uso de nuestro
 talento para el lenguaje: enseñarle a la computadora uno.
 
-(((lengiajes humanos)))(((expresividad)))Los lenguajes humanos permiten que
+(((lenguajes humanos)))(((expresividad)))Los lenguajes humanos permiten que
 palabras y frases se combinen en muchas diferentes formas, lo cuál nos permite
 decir una amplia variedad de cosas. Los lenguajes computacionales, aunque son
 gramaticalmente menos flexibles, siguen un principio similar.
@@ -56,7 +56,7 @@ ____
 (((programación,dificultad de)))A parte de explicar JavaScript, te introduciré en
 los principios básicos de la programación. Programar, resulta, es difícil.
 Las reglas fundamentales típicamente son simples y claras.
-Pero los programas contruidos sobre esas reglas tienden a volverse
+Pero los programas construidos sobre esas reglas tienden a volverse
 lo suficientemente complejos para introducir sus propias reglas y más
 complejidad. En cierta forma, estás construyendo tu propio laberinto y podrías
 perderte en él.
@@ -68,7 +68,7 @@ formas que requerirán que hagas conexiones adicionales.
 
 Es tu responsabilidad realizar el esfuerzo necesario. Cuando se te haga difícil
 seguir este libro, no concluyas rápidamente nada acerca de tus capacidades.
-Tu eres bueno—sólo necesitas mantener el paso. Toma un respiro,
+Tu eres bueno, sólo necesitas mantener el paso. Toma un respiro,
 vuelve a leer el material, y _siempre_ asegúrate de leer y entender
 los programas de ejemplo y los ((ejercicios)). Aprender es un trabajo duro,
 pero todo lo que aprendas ahora es tuyo y hará el aprendizaje cada vez más fácil.
@@ -81,24 +81,23 @@ virtualmente ilimitada pueden ser creados en la forma de programas de computador
 ____
 
 (((programa,naturaleza de un)))(((datos)))Un programa es muchas cosas. Es una
-pieza de texto escrita por un programador, es la fuerza que dirije
+pieza de texto escrita por un programador, es la fuerza que dirige
 a la computadora para hacer lo que hace, son datos en la memoria de la
 computadora, y aún así controla las acciones realizadas en esta misma memoria.
 Las analogías que tratan de comparar a las computadoras con objetos que conocemos
 tienden a quedarse cortas. Una que se ajusta superficialmente es la de
-máquina, un montón de piezas separdas que se relacionan, y para hacerlo
-funcionar, tenemos que considerar las formas en que esas piezas se
-interconectan y contribuyen al funcionamiento del todo.
+máquina, un montón de piezas separadas que se relacionan, y para hacerlo
+funcionar, tenemos que considerar las formas en que esas piezas se interconectan y contribuyen al funcionamiento del todo.
 
-(((computadora)))Una computadora es una máquina que actua como anfitriona de
+(((computadora)))Una computadora es una máquina que actuá como anfitriona de
 estas máquinas inmateriales. Las computadoras por sí mismas sólo pueden hacer
 cosas estúpidamente simples. La razón por la que son tan poderosas es que hacen
 esas cosas a una velocidad increíblemente rápida. Un programa puede combinar
 ingeniosamente un número enorme de esas acciones simples para lograr cosas muy
 complicadas.
 
-(((progración,lo bueno de)))Para algunos de nosotros, escribir programas de
-computadoras es un juego fascinante. Un programa es un construcción del
+(((programación,lo bueno de)))Para algunos de nosotros, escribir programas de
+computadoras es un juego fascinante. Un programa es una construcción del
 pensamiento. No tiene costo construirlo, no pesa nada, y crece fácilmente bajo
 nuestras manos tecleando.
 
@@ -131,7 +130,7 @@ olvidarán su alegría, y se aburrirán con su trabajo.
 
 (((lenguaje de programación)))(((código máquina)))(((datos binarios)))En el
 principio, cuando nació la computación, no había lenguajes de programación.
-Los progrmas lucían algo así:
+Los programas lucían algo así:
 
 ----
 00110001 00000000 00000000
@@ -226,9 +225,9 @@ console.log(total);
 (((bucle while)))(((bucle)))Esta versión nos da unas cuantas mejoras más.
 Y lo más importante es que ya no hay necesidad de especificar la forma en que
 queremos que nuestro programa salte de atrás para adelante. La construcción del
-lenguaje `while` se encarga de eso. Continúa ejecutándo el bloque (dentro de las
+lenguaje `while` se encarga de eso. Continúa ejecutando el bloque (dentro de las
 llaves) debajo de él mientras la condición que se le dio se mantenga. Esa
-condición es `conteo <= 10`, lo que significa "++conteo++ es menor o igual que 10". 
+condición es `conteo <= 10`, lo que significa "++conteo++ es menor o igual que 10".
 Ya no tenemos que crear un valor temporal y compararlo con 0, lo cuál era un
 detalle sin interés para nosotros. Parte del poder de los lenguajes de
 programación es que estos se encargan de los detalles que no nos interesan.
@@ -317,7 +316,7 @@ JavaScript realmente me ha _gustado_.
 
 (((futuro)))(((JavaScript,versiones de)))(((ECMAScript)))(((ECMAScript
 6)))Han existido varias versiones de JavaScript. ECMAScript versión 3 fue la
-versión ampliamente soportada en la época de ascención a la dominación de
+versión ampliamente soportada en la época de ascensión a la dominación de
 JavaScript, más o menos entre 2000 y 2010. Durante este tiempo, el trabajo fue
 dirigido a una ambiciosa versión 4, que planeaba varias mejoras radicales y
 extensiones al lenguaje. Cambiar un lenguaje vivo, ampliamente usado en una
@@ -339,25 +338,25 @@ del navegador.
 
 == Código, y qué hacer con él ==
 
-(((leyenfo código)))(((escribiendo código)))El código es el texto del que están
+(((leyendo código)))(((escribiendo código)))El código es el texto del que están
 compuestos los programas. La mayor parte de los capítulos de este libro
 contienen un montón de él. En mi experiencia, leer y escribir ((código)) son partes
 indispensables de ((aprender)) a programar, así que trata de no sólo darles una
-mirada rápida a los ejemplos. Léelos aténtamente y entiéndelos. Esto podría ser
+mirada rápida a los ejemplos. Léelos atentamente y entiéndelos. Esto podría ser
 lento y confuso al principio, pero prometo que rápidamente le agarrarás el modo.
 Lo mismo es aplicable a los ((ejercicios)). No asumas que los entiendes hasta
-que realemente hayas escrito una solución que funcione.
+que realmente hayas escrito una solución que funcione.
 
 
 (((interpretación))) Te recomiendo probar tus soluciones a los ejercicios en
 un intérprete de JavaScript real. De esa forma obtendrás retroalimentación
 inmediata acerca de si lo que estás haciendo funciona, y, yo espero, serás
-tentado a ((experimentar)) e ir más allás de los ejercicios.
+tentado a ((experimentar)) e ir más allá de los ejercicios.
 
 ifdef::interactive_target[]
 
 Cuando estés leyendo este libro en tu navegador, puedes editar(y correr)
-todos los programas de ejemplo haciendo click en ellos.
+todos los programas de ejemplo haciendo clic en ellos.
 
 endif::interactive_target[]
 
@@ -366,7 +365,7 @@ ifdef::book_target[]
 (((descarga)))(((sandbox)))(((código funcionando)))La manera más fácil de
 correr el código del libro, y de experimentar con él, es en la versión
 web en http://eloquentjavascript.net/[_eloquentjavascript.net_]. Ahí podrás
-hacer click en un ejemplo para editarlo y correrlo y para ver la salida que
+hacer clic en un ejemplo para editarlo y correrlo y para ver la salida que
 produce. Para trabajar en lo ejercicios, dirígete a
 http://eloquentjavascript.net/code[_eloquentjavascript.net/code_], que provee
 código para empezar con cada ejercicio y te permite ver las soluciones.
@@ -385,7 +384,7 @@ necesarios para hacer funcionar el código de cualquier capítulo.
 
 == Vista general del libro ==
 
-Este libro está compuesto por tres aprtes. Los primeros 11 capítulos hablan de
+Este libro está compuesto por tres partes. Los primeros 11 capítulos hablan de
 JavaScript en sí mismo. Los siguientes ocho son acerca de los ((navegadores))
 web y la forma en que JavaScript es usado para programarlos. Finalmente,
 los últimos dos capítulos están dedicados a ((Node.js)), otro entorno para
@@ -393,7 +392,7 @@ programar en JavaScript.
 
 A lo largo del libro hay cinco _capítulos de proyecto_, que describen programas
 de ejemplo más grandes para darte una prueba de la programación en el mundo real.
-En order de aparcición trabajaremos en
+En orden de aparición trabajaremos en
 link:07_elife.html#elife[simulación de vida artificial], un
 link:11_language.html#language[lenguaje de programación], un
 link:15_game.html#game[juego de plataforma], un
@@ -403,9 +402,9 @@ link:21_skillsharing.html#skillsharing[sitio dinámico].
 La parte del lenguaje del libro empieza con cuatro capítulos para presentar
 la estructura básica de JavaScript. Estos presentan
 link:02_program_structure.html#program_structure[estructuras de control]
-(como la palabra `while` que viste ene esta introducción),
+(como la palabra `while` que viste en esta introducción),
 link:03_functions.html#functions[funciones] (escribir tus propias operaciones),
-y link:04_data.html#data[estructuras de datos]. Despeués de esto, serás capaz de
+y link:04_data.html#data[estructuras de datos]. Después de esto, serás capaz de
 escribir programas simples. Después, los capítulos
 link:05_higher_order.html#higher_order[5] y
 link:06_object.html#object[6] presentan técnicas para usar
@@ -414,8 +413,8 @@ mantener a la complejidad bajo control.
 
 Después de link:07_elife.html#elife[un primer capítulo de proyecto], la primera
 parte del libro continúa con capítulos acerca de
-link:08_error.html#error[manejo y correccón de errores],
-link:09_regexp.html#regexp[expresiones regulares] (una herramienta importanate
+link:08_error.html#error[manejo y corrección de errores],
+link:09_regexp.html#regexp[expresiones regulares] (una herramienta importante
 para el manejo de datos de texto), y
 link:10_modules.html#modules[modularidad], otra arma contra la complejidad.
 El link:11_language.html#language[segundo capítulo de proyecto] termina con la
@@ -425,7 +424,7 @@ En la segunda parte, los Capítulos link:12_browser.html#browser[12] a
 link:19_paint.html#paint[19], describen las herramientas a las que JavaScript
 tiene acceso en el navegador web. Aprenderás a mostrar cosas en la pantalla
 (Capítulos link:13_dom.html#dom[13] y
-link:16_canvas.html#canvas[16]), repsonder a los datos de entrada del usuario
+link:16_canvas.html#canvas[16]), responder a los datos de entrada del usuario
 (Capítulos link:14_event.html#event[14] y link:18_forms.html#forms[18]), y a comunicarte
 a través de la red (link:17_http.html#http[Capítulo 17]).
 Otra vez, hay dos proyectos en esta parte.

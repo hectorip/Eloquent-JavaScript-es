@@ -447,25 +447,24 @@ Una vez que tiene suficientes datos, quiere calcular la ((correlación))
 entre su ardillamiento y cada uno de los eventos e, idealmente, aprender
 algo útil de esas correlaciones.
 
-(((correlation)))_Correlation_ is a measure of ((dependence)) between
-((variable))s (“variables” in the statistical sense, not the
-JavaScript sense). It is usually expressed as a coefficient that
-ranges from -1 to 1. Zero correlation means the variables are not
-related, whereas a correlation of one indicates that the two are
-perfectly related—if you know one, you also know the other. Negative
-one also means that the variables are perfectly related but that they
-are opposites—when one is true, the other is false.
+(((correlación)))La _Correlación_ es una medida de ((dependencia)) entre
+((variable))s (“variables” en el sentido de la estadística, no en el de
+JavaScript). Es expresada usualmente como un coeficiente que va del -1 al
+1. Una correlación de 0 significa que las variables no están relacionadas, mientras
+que una correlación de uno indica que están perfectamente relacionadas: si conoces una,
+entonces conoces la otra. El uno negativo también significa que están perfectamente
+relacionadas pero que son opuestas, cuando una es verdadera, la otra es falsa.
 
-(((phi coefficient)))For binary (Boolean) variables, the _phi_
-coefficient (_ϕ_) provides a good measure of correlation and is
-relatively easy to compute. To compute _ϕ_, we need a ((table)) _n_
-that contains the number of times the various combinations of the two
-variables were observed. For example, we could take the event of
-eating ((pizza)) and put that in a table like this:
+(((coeficiente phi))) Para variables binarias (Booleanas), el coeficiente _phi_ 
+(_ϕ_) da una buena medida de correlación y es relativamente fácil de calcular.
+Para calcular _ϕ_ necesitamos una ((tabla)) _n_ que contine el número de veces
+que varias combinaciones de variables fueron observadas. Por ejemplo, podríamos
+tomar el evento de comer ((pizza)) y ponerlo en la tabla de la siguiente manera:
 
-image::img/pizza-squirrel.svg[alt="Eating pizza versus turning into a squirrel",width="7cm"]
+image::img/pizza-squirrel.svg[alt="Comer pizza vs convertirse en ardilla.",width="7cm"]
 
-_ϕ_ can be computed using the following formula, where _n_ refers to the table:
+_ϕ_ puede ser calculado usando la siguiente fórmula, en donde _n_ se refiere a la
+tabla:
 
 ifdef::html_target[]
 
@@ -492,202 +491,196 @@ pass:[\begin{equation}\varphi = \frac{n_{11}n_{00}-n_{10}n_{01}}{\sqrt{n_{1\bull
 
 endif::tex_target[]
 
-The notation (!html _n_~01~!)(!tex pass:[$n_{01}$]!) indicates the
-number of measurements where the first variable (squirrelness) is false
-(0) and the second variable (pizza) is true (1). In this
-example, (!html _n_~01~!)(!tex pass:[$n_{01}$]!) is 9.
+La notación (!html _n_~01~!)(!tex pass:[$n_{01}$]!) indica el
+número de medidas en el que la primer vairiable (ardillificación) es falsa (0)
+y la segunda variable (pizza) es verdadera (1). En este ejemplo, (!html _n_~01~!)(!tex pass:[$n_{01}$]!) es 9.
 
-The value (!html _n_~1•~!)(!tex pass:[$n_{1\bullet}$]!) refers to the
-sum of all measurements where the first variable is true, which is 5
-in the example table. Likewise, (!html _n_~•0~!)(!tex pass:[$n_{\bullet0}$]!)
-refers to the sum of the measurements where the second variable is false.
 
-(((correlation)))(((phi coefficient)))So for the pizza table, the part
-above the division line (the dividend) would be 1×76 - 4×9 = 40, and
-the part below it (the divisor) would be the square root of
-5×85×10×80, or (!html √340000!)(!tex pass:[$\sqrt{340000}$]!). This
-comes out to _ϕ_ ≈ 0.069, which is tiny. Eating ((pizza)) does not
-appear to have influence on the transformations.
+El valor (!html _n_~1•~!)(!tex pass:[$n_{1\bullet}$]!) se refiere a la suma
+de todas las medidas en donde la primera variable es verdadera, que es 5 en la tabla de
+ejemplo. De la misma manera, (!html _n_~•0~!)(!tex pass:[$n_{\bullet0}$]!)
+se refiere a la suma de medidas en donde la segunda variable es falsa.
 
-== Computing correlation ==
+(((correlación)))(((coeficiente phi))) Así que para la tabla de la pizza,
+la parte de arriba de la línea de división (el dividendo) sería 1×76 - 4×9 = 40,
+y la parte de debajo de la línea (el divisor) sería la raíz cuadrada de 
+5×85×10×80, o (!html √340000!)(!tex pass:[$\sqrt{340000}$]!). Esto da como resultado
+_ϕ_ ≈ 0.069, que es muy pequeño. Comer ((pizza)) no parece tener influencia en las transformaciones.
 
-(((array,as table)))(((nesting,of arrays)))We can represent a
-two-by-two ((table)) in JavaScript with a four-element array (`[76, 9,
-4, 1]`). We could also use other representations, such as an array
-containing two two-element arrays (`[[76, 9], [4, 1]]`) or an object
-with property names like `"11"` and `"01"`, but the flat array is
-simple and makes the expressions that access the table pleasantly
-short. We'll interpret the indices to the array as two-((bit))
-((binary number)), where the leftmost (most significant) digit refers
-to the squirrel variable and the rightmost (least significant) digit
-refers to the event variable. For example, the binary number `10`
-refers to the case where Jacques did turn into a squirrel, but the
-event (say, "pizza") didn't occur. This happened four times. And since
-binary `10` is 2 in decimal notation, we will store this number at
-index 2 of the array.
+== Calculando correlaciones ==
 
-(((phi coefficient)))(((phi function)))This is the function that
-computes the _ϕ_ coefficient from such an array:
+(((array,como tabla)))(((anidado, de arrays)))Podemos representar una
+((tabla)) de dos por dos en JavaScript con un array de 4 elementos
+(`[76, 9, 4, 1]`). Podríamos también usar otras representaciones, como
+un array que contenga dos arrays de dos elementos cada uno (`[[76, 9], [4, 1]]`) o como
+un objeto con nombre de propiedades como `"11"` y `"01"`, pero el array
+plano es simple y hace que las expresiones de acceso a la tabla sean
+convenientemente cortas. Interpretaremos los índices del array como
+un ((número binario)) de dos ((bit))s, en donde el dígito más a la izquierda
+(el más siginificativo) se refiere a la variable de la ardilla y el más a
+la derecha (menos significativo) se refiere a la variable del evento. Por ejemplo, 
+el número binario `10` se refiere al caso en que Jacques se convirtió en 
+ardilla, pero el evento (digamos, "pizza"), no ocurrió. Esto pasó 4 veces. Y como
+el binario `10` es 2 en notación decimal, guardaremos ese número en el índice 2
+del array.
+
+(((coeficiente phi)))(((función phi)))Esta es la función que calcula el coeficiente
+_ϕ_ del ese array:
 
 // test: clip
 // include_code strip_log
 
 [source,javascript]
 ----
-function phi(table) {
-  return (table[3] * table[0] - table[2] * table[1]) /
-    Math.sqrt((table[2] + table[3]) *
-              (table[0] + table[1]) *
-              (table[1] + table[3]) *
-              (table[0] + table[2]));
+function phi(tabla) {
+  return (tabla[3] * tabla[0] - tabla[2] * tabla[1]) /
+    Math.sqrt((tabla[2] + tabla[3]) *
+              (tabla[0] + tabla[1]) *
+              (tabla[1] + tabla[3]) *
+              (tabla[0] + tabla[2]));
 }
 
 console.log(phi([76, 9, 4, 1]));
 // → 0.068599434
 ----
 
-(((square root)))(((Math.sqrt function)))This is simply a direct
-translation of the _ϕ_ formula into JavaScript. `Math.sqrt` is the
-square root function, as provided by the `Math` object in a standard
-JavaScript environment. We have to sum two fields from the table to
-get fields like (!html n~1•~!)(!tex pass:[$n_{1\bullet}$]!) because
-the sums of rows or columns are not stored directly in our data
-structure.
+(((raíz cuadrada)))(((funcieon Math.sqrt)))Esto es simplemente una
+traducción directa de la fómula de la _ϕ_ a JavaScript. `Math.sqrt`
+es la función raíz cuadrada, provista por el objeto `Math` en un entorno
+de JavaScript estándar. Tenemos que sumar los dos campos de la tabla
+para obtener campos como (!html n~1•~!)(!tex pass:[$n_{1\bullet}$]!)
+porque la suma de las filas o columnas no están guardadas directamente en
+nuestra estructura de datos.
 
-(((JOURNAL data set)))Jacques kept his journal for three months. The
-resulting ((data set)) is available in the coding sandbox for this
-chapter(!book (http://eloquentjavascript.net/code#4[_eloquentjavascript.net/code#4_])!),
-where it is stored in the `JOURNAL` variable, and in a downloadable
+(((set de datos DIARIO)))Jacques mantuvo su diario por tres meses. El
+((set de datos)) resultante está disponible en el área de código para
+este capítulo(!book (http://eloquentjavascript.net/code#4[_eloquentjavascript.net/code#4_])!),
+en donde está guardada la variable `DIARIO`, y como descarga en
 http://eloquentjavascript.net/code/jacques_journal.js[file].
 
-(((tableFor function)))(((hasEvent function)))To extract a two-by-two
-((table)) for a specific event from this journal, we must loop over
-all the entries and tally up how many times the event occurs in
-relation to squirrel transformations.
+(((función tablaPara)))(((función tieneEvento)))Para extraer una ((tabla)) de 2 x 2
+po un evento específico de este diario, tenemos que iterar sobre todas las
+entradas y contar cuántas veces el evento ocurre en relación con las
+transformaciones a ardilla.
 
 // include_code strip_log
 
 [source,javascript]
 ----
-function hasEvent(event, entry) {
-  return entry.events.indexOf(event) != -1;
+function tieneEvento(evento, entrada) {
+  return entrada.eventos.indexOf(evento) != -1;
 }
 
-function tableFor(event, journal) {
-  var table = [0, 0, 0, 0];
-  for (var i = 0; i < journal.length; i++) {
-    var entry = journal[i], index = 0;
-    if (hasEvent(event, entry)) index += 1;
-    if (entry.squirrel) index += 2;
-    table[index] += 1;
+function tablaPara(evento, diario) {
+  var tabla = [0, 0, 0, 0];
+  for (var i = 0; i < diario.length; i++) {
+    var entrada = diario[i], index = 0;
+    if (tieneEvento(evento, entrada)) index += 1;
+    if (entrada.ardilla) index += 2;
+    tabla[index] += 1;
   }
-  return table;
+  return tabla;
 }
 
-console.log(tableFor("pizza", JOURNAL));
+console.log(tabalaPara("pizza", DIARIO));
 // → [76, 9, 4, 1]
 ----
 
-(((array,searching)))(((indexOf method)))The `hasEvent` function tests
-whether an entry contains a given event. Arrays have an `indexOf`
-method that tries to find a given value (in this case, the event name)
-in the array and returns the index at which it was found or -1 if it
-wasn't found. So if the call to `indexOf` doesn't return -1, then we
-know the event was found in the entry.
+(((array, búsqueda)))(((método indexOf))) La función `tieneEvento` verifica
+si una entrada tiene una entrada dada. Los arrays tienen un método 
+`indexOf` que intenta encontrar un valor dado (en este caso, el nombre del evento)
+en el array y regresan el índice en el cuál fue encontrado o -1 si no se encontró.
+Así que si la llamada a `indexOf` no regresa -1, entonces sabemos que el evento
+fue encontrado en la entrada.
 
-(((array,indexing)))The body of the loop in `tableFor` figures
-out which box in the table each journal entry falls into by checking
-whether the entry contains the specific event it's interested in and
-whether the event happens alongside a squirrel incident. The loop then
-adds one to the number in the array that corresponds to this box on
-the table.
+(((array,indexado)))El cuerpo del loop en `tablaPara` encuentra en qué celda de la
+tabla cae cada entrada del diario mediante verificar si la entrada contiene
+el evento que está buscando y si el evento ocurre junto con un incidente de ardilla.
+Entonces, el loop agrega uno al número en el array que corresponde con esta
+categoría en la tabla.
 
-We now have the tools we need to compute individual ((correlation))s.
-The only step remaining is to find a correlation for every type of
-event that was recorded and see whether anything stands out. But how
-should we store these correlations once we compute them?
+Ahora tenemos las  herramientas que necesitamos para calcular las ((correlaciones))
+individuales. El único paso que queda es encontrar la correlación para
+cada tipo de evento registrado y ver si algo sobresale. Pero, ¿cómo debereiamos guardar
+esas correlaciones una vez que las calculamos?
 
-== Objects as maps ==
+== Objetos como mapas ==
 
-(((weresquirrel example)))(((array)))One possible way is to store
-all the ((correlation))s in an array, using objects with `name` and
-`value` properties. But that makes looking up the correlation for a
-given event somewhat cumbersome: you'd have to loop over the whole
-array to find the object with the right `name`. We could wrap this
-lookup process in a function, but we would still be writing more code,
-and the computer would be doing more work than necessary.
+(((ejemplo del hombre ardilla)))(((array)))Una camino posible es guardar
+todas las ((correlaciones)) en un array, usando objetos con propiedades `nombre` y `valor`.
+Pero eso hace que buscar la correlación por un evnto dado sea un poco difícil: tienes que
+iterar sobre el array completo para buscar el objeto con el `nombre` correcto. Podemos
+poner este código en una función, pero seguiríamos escribiendo más código, y la computadora
+estaría haciendo más trabajo del necesario.
 
 [[object_map]]
-(((object)))(((square brackets)))(((object,as map)))(((in
-operator)))A better way is to use object properties named after the
-event types. We can use the square bracket access notation to create
-and read the properties and can use the `in` operator to test whether
-a given property exists.
+(((objeto)))(((corchetes)))(((object,como mapa)))(((operador in)))Una mejor forma es usar propiedades de
+un objeto nombradas como los tipos de eventos. Podemos usar la notación de acceso de corchetes (paréntesis cuadrados)
+para crear y leer las propiedades y el operador `in` para verificar si una propiedad existe.
 
 [source,javascript]
 ----
-var map = {};
-function storePhi(event, phi) {
-  map[event] = phi;
+var mapa = {};
+function giardarPhi(evento, phi) {
+  mapa[evento] = phi;
 }
 
-storePhi("pizza", 0.069);
-storePhi("toqué un árbol", -0.081);
-console.log("pizza" in map);
+giardarPhi("pizza", 0.069);
+giardarPhi("toqué un árbol", -0.081);
+console.log("pizza" in mapa);
 // → true
-console.log(map["touched tree"]);
+console.log(mapa["touched tree"]);
 // → -0.081
 ----
 
-(((data structure)))A _((map))_ is a way to go from values in one
-domain (in this case, event names) to corresponding values in another
-domain (in this case, _ϕ_ coefficients).
+(((estructura de datos)))Un _((mapa))_ es una manera de ir de valores en
+un dominio (en este caso nombres de eventos) a valores correspondientes
+en otro dominio (en este caso  coeficientes _ϕ_).
 
-There are a few potential problems with using objects like this, which
-we will discuss in link:06_object.html#prototypes[Chapter 6], but for
-the time being, we won't worry about those.
+Existen algunos problemas potenciales al usar objetos como este, que discutiremos
+en el link:06_object.html#prototypes[Capítulo 6], pero por ahora, no nos preocupemos de
+eso.
 
-(((for/in loop)))(((for loop)))(((object,looping over)))What if
-we want to find all the events for which we have stored a coefficient?
-The properties don't form a predictable series, like they would in an
-array, so we cannot use a normal `for` loop. JavaScript provides a
-loop construct specifically for going over the properties of an
-object. It looks a little like a normal `for` loop but distinguishes
-itself by the use of the word `in`.
+(((loop for/in)))(((loop for)))(((object,iterando))) ¿Y si queremos hallar
+todos los eventos para los que tenemos guardados un coeficiente? Las propiedades
+no forman una serie predecible, como lo harían en un array, así que no 
+podemos usar un `for` normal. JavaScript tiene un construcción iterativa
+específicamente para funcionar sobre las propiedades de un objeto. Luce un poco como
+un loop `for` normal pero se distingue por el uso de la palabra `in`.
 
 [source,javascript]
 ----
-for (var event in map)
-  console.log("The correlation for '" + event +
-              "' is " + map[event]);
-// → The correlation for 'pizza' is 0.069
-// → The correlation for 'touched tree' is -0.081
+for (var evento in mapa)
+  console.log("La correlación para '" + evento +
+              "' es " + mapa[evento]);
+// → La correlación para 'pizza' is 0.069
+// → La correlación para 'toqué un arbol' es -0.081
 ----
 
-[[analysis]]
-== The final analysis ==
+[[análisis]]
+== El análisis final ==
 
-(((journal)))(((weresquirrel example)))(((gatherCorrelations
-function)))To find all the types of events that are present in the
-data set, we simply process each entry in turn and then loop over the
-events in that entry. We keep an object `phis` that has correlation
-coefficients for all the event types we have seen so far. Whenever we
-run across a type that isn't in the `phis` object yet, we compute its
-correlation and add it to the object.
+(((diario)))(((ejemplo del hombre ardilla)))(((función
+reunirCorrelaciones)))Para encontrar todos los tipos de eventos
+que están presentes en el set de datos, simplemente procesamos cada entrada
+en turno y después iteramos en los eventos de esa entrada. Mantenemos un objeto
+`phis` que tiene los coeficientes de correlación para todos los tipos de eventos que
+hemos visto hasta ahora. Cuando encontramos un tipo de evento que no está en el 
+objeto `phis` todavía, calculamos la correlación y la añadimos al objeto.
 
 // test: clip
 // include_code strip_log
 
 [source,javascript]
 ----
-function gatherCorrelations(journal) {
+function gatherCorrelations(diario) {
   var phis = {};
-  for (var entry = 0; entry < journal.length; entry++) {
-    var events = journal[entry].events;
+  for (var entry = 0; entry < diario.length; entry++) {
+    var events = diario[entry].events;
     for (var i = 0; i < events.length; i++) {
       var event = events[i];
       if (!(event in phis))
-        phis[event] = phi(tableFor(event, journal));
+        phis[event] = phi(tableFor(event, diario));
     }
   }
   return phis;

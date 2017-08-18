@@ -481,7 +481,7 @@ function stripComments(code) {
 }
 console.log(stripComments("1 /* a */+/* b */ 1"));
 // → 1 + 1
---?-
+----
 
 Una gran cantidad de errores ((_bug_)) en los programas de expresión regular se puede detectar al comprobar el uso indebido de este comportamiento codicioso de un operador de repetición. Cuando utilice un operador de repetición, considere primero la variante de cambiar su comportamiento con `_?_`.
 
@@ -712,7 +712,7 @@ Las cadenas tienen un método `_match_` para buscar coincidencia con una expresi
 
 Las expresiones regulares pueden tener opciones, que se escriben después de la barra de cierre (_|_). La opción `_i_` hace que el _matcheo_ sea insensible a mayusculas y minusculas (case insensitive), mientras que la opción `_g_` hace que la expresión sea global, eso genera, entre otras cosas, hace que el método _replace_ reemplace todas las instancias en lugar de sólo la primera.
 
-El constructor `_RegExp_` se puede utilizar para crear un valor de expresión regular a partir de una cadena. 
+El constructor `_RegExp_` se puede utilizar para crear un valor de expresión regular a partir de una cadena.
 
 Las expresiones regulares son una herramienta muy afilada con un comando torpe. Ello simplifican algunas tareas pero pueden volverse incontrolables cuando se aplican a problemas complejos. Parte de saber cómo usarlos es resistir el impulso de intentar utilizarlas en los casos incorrectos.
 

@@ -67,7 +67,7 @@ Vector.prototype.plus = function(other) {
 };
 ----
 
-(((object)))(((encapsulation))) A continuacion, necesitamos un tipo de objeto que modele por si mismo la cuadricula (_grid_). La cuadricula es parte del mundo, pero nosotros estamos haciendo la cuadricula como un objeto separado (que sera una propiedad del objeto mundo) para mantener el objeto _world_ simple. El mundo debe ocuparse de las cosas relacionadas con el mundo, y la cuadricula debe ocuparse de las cosas relacionadas con la cuadricula. 
+(((object)))(((encapsulation))) A continuacion, necesitamos un tipo de objeto que modele por si mismo la cuadricula (_grid_). La cuadricula es parte del mundo, pero nosotros estamos haciendo la cuadricula como un objeto separado (que sera una propiedad del objeto mundo) para mantener el objeto _world_ simple. El mundo debe ocuparse de las cosas relacionadas con el mundo, y la cuadricula debe ocuparse de las cosas relacionadas con la cuadricula.
 
 (((array)))(((data structure)))Para almacenar una cuadricula de valores, tenemos varias opciones. Podemos utilizar una matriz de matrices de filas (_array of row arrays_) y utilizar dos propiedades de acceso para llegar a una cruadricula específica:
 
@@ -443,9 +443,9 @@ for (var i = 0; i < 5; i++) {
 // → … five turns of moving critters
 ----
 
-          ifdef::book_target[]
+ifdef::book_target[]
 
-          
+
 Los primeros dos mapas que se muestran será algo similar a esto:
 
 ----
@@ -584,8 +584,9 @@ LifelikeWorld.prototype.letAct = function(critter, vector) {
       this.grid.set(vector, null);
   }
 };
-    ----
-(((electronic life)))(((function,as value)))(((call method)))(((this)))El nuevo método _letAct_ comprueba primero si se ha devuelto una acción, si existe una (función de controlador) para este tipo de acción y, por último, si ese controlador devuelve _true_, lo que indica que se ha tratado correctamente la acción. 
+----
+
+(((electronic life)))(((function,as value)))(((call method)))(((this)))El nuevo método _letAct_ comprueba primero si se ha devuelto una acción, si existe una (función de controlador) para este tipo de acción y, por último, si ese controlador devuelve _true_, lo que indica que se ha tratado correctamente la acción.
 
 Tenga en cuenta el uso de _call_ para dar al manejador acceso al mundo a través de _this_.
 Si la acción no funcionó por alguna razón, la acción predeterminada es que la criatura simplemente espere. Pierde un quinto punto de energía, y si su nivel de energía es igual o menor que cero, la criatura muere y se borra de la cuadrícula.
@@ -761,6 +762,9 @@ endif::interactive_target[]
 
 ifdef::book_target[]
 
+// include_code
+
+[source,javascript]
 ----
 ############################  ############################
 #####                 ######  ##### **              ######
@@ -864,7 +868,7 @@ El problema de la codicia puede ser atacado de varias maneras. Las criaturas pod
 
 (((predators (exercise))))(((carnivore)))(((food chain)))Cualquier ecosistema serio tiene una cadena alimentaria más larga que un solo eslabón. Escriba otro _critter_ que sobreviva comiendose al _critter_  herbívoro. Usted notará que la estabilidad es aún más difícil de lograr ahora que hay ciclos en múltiples niveles. Trate de encontrar una estrategia para hacer que el ecosistema funcione sin problemas durante al menos un tiempo.
 
-(((Tiger type)))Una cosa que ayudará es hacer el mundo más grande. De esta manera, los auges o bajas de la población local son menos propensos a eliminar completamente una especie, y hay espacio para la población de presas relativamente grande que se necesita para mantener una pequeña población de depredadores. 
+(((Tiger type)))Una cosa que ayudará es hacer el mundo más grande. De esta manera, los auges o bajas de la población local son menos propensos a eliminar completamente una especie, y hay espacio para la población de presas relativamente grande que se necesita para mantener una pequeña población de depredadores.
 
 ifdef::interactive_target[]
 
