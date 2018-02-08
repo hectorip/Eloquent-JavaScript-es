@@ -1,11 +1,20 @@
 {{meta {load_files: ["code/intro.js"]}}}
 
-# Introduction
+# Introducción
+
+Este libro trata de como darle instrucciones a las ((computadora))s. 
+Hoy son tan comunes como destornilladores. Pero son un poquito más complejas
+que estos, y hacer que hagan precisamente lo que deseas que hagan no es fácil siempre.
 
 This is a book about instructing ((computer))s. Computers are about as
 common as screwdrivers today. But they are quite a bit more complex
 than screwdrivers, and making them do the precise thing you want them
 to do isn't always easy.
+
+Si la tarea que tienes para tu computadora es común y bien entendida,
+como mostrarte el correo electrónico o funcionar como calculadora,
+puedes abrir la ((aplicación)) apropiada y funcionará. Pero
+para una tarea única o sin un fin definido puede que no exista una aplicación.
 
 If the task you have for your computer is a common, well-understood
 one, such as showing you your email or acting like a calculator, you
