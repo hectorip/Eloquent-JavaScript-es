@@ -14,19 +14,14 @@ to do isn't always easy.
 Si la tarea que tienes para tu computadora es común y bien entendida,
 como mostrarte el correo electrónico o funcionar como calculadora,
 puedes abrir la ((aplicación)) apropiada y funcionará. Pero
-para una tarea única o sin un fin definido puede que no exista una aplicación.
+para una tarea única o sin un fin bien establecido, puede que no exista una aplicación.
 
-If the task you have for your computer is a common, well-understood
-one, such as showing you your email or acting like a calculator, you
-can open the appropriate ((application)) and get to work. But for
-unique or open ended tasks, there may not be an application.
+Entra la _((programación))_. Programar es el acto de construiir un programa:
+un conjunto de instrucciones precisas que dicen a una compurtadora que hacer.
+Debido a que las computadoras son tontas, bestias pedantes, programar
+es fundamentalmente tedioso y frustrante.
 
-That is where _((programming))_ may come in. Programming is the act of
-constructing a program—a set of precise instructions, that tell a
-computer what to do. Because computers are dumb, pedantic beasts,
-programming is fundamentally tedious and frustrating.
-
-{{index [programming, "joy of"], speed}}
+{{index [programación, "el gozo de"], speed}}
 
 Fortunately, if you can get over that, and maybe even enjoy the rigor
 of thinking in terms that dumb machines can deal with, programming can
