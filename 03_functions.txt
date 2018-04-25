@@ -401,7 +401,7 @@ argumentos y te muestra "Hola".
 
 (((undefined)))(((parámetros)))JavaScript es extremadamente abierta de mente
 acerca del número de argumentos que le pasas a una función. Sí le pasas demasiados,
-loa argumentos extra son ignorados. Si le pasas muy pocos, los parámetros que faltan
+los argumentos extra son ignorados. Si le pasas muy pocos, los parámetros que faltan
 simplemente son asignados a `undefined`.
 
 El lado malo de esto es que es posible, probable a menudo, que le pasarás
