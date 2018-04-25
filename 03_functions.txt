@@ -489,7 +489,7 @@ tiempos de vida de las variables, además permite algunos usos creativos
 de las funciones.
 
 (((función multiplicador))) Con un pequeño cambio, podemos podemos hacer
-del ejemplo anterior funciones que multiplicquen por un número arbitrario.
+del ejemplo anterior funciones que multipliquen por un número arbitrario.
 
 [source,javascript]
 ----
