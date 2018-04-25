@@ -469,7 +469,7 @@ function envuelveValor(n) {
 
 var envoltura1 = envuelveValor(1);
 var envoltura2 = envuelveValor(2);
-console.log(envoltura11());
+console.log(envoltura1());
 // → 1
 console.log(envoltura2());
 // → 2
