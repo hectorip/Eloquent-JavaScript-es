@@ -3,66 +3,62 @@
 # Introducción
 
 Este libro trata de como darle instrucciones a las ((computadora))s. 
-Hoy son tan comunes como destornilladores. Pero son un poquito más complejas
-que estos, y hacer que hagan precisamente lo que deseas que hagan no es fácil siempre.
-
-This is a book about instructing ((computer))s. Computers are about as
-common as screwdrivers today. But they are quite a bit more complex
-than screwdrivers, and making them do the precise thing you want them
-to do isn't always easy.
+Hoy son tan comunes como destornilladores. Pero son un poquito más complejas,
+y lograr que hagan precisamente lo que deseas que hagan no es fácil todas las veces.
 
 Si la tarea que tienes para tu computadora es común y bien entendida,
 como mostrarte el correo electrónico o funcionar como calculadora,
 puedes abrir la ((aplicación)) apropiada y funcionará. Pero
 para una tarea única o sin un fin bien establecido, puede que no exista una aplicación.
 
-Entra la _((programación))_. Programar es el acto de construiir un programa:
-un conjunto de instrucciones precisas que dicen a una compurtadora que hacer.
-Debido a que las computadoras son tontas, bestias pedantes, programar
+Entra la _((programación))_. Programar es el acto de construir un programa:
+un conjunto de instrucciones precisas que le dicen a una compurtadora qué hacer.
+Debido a que las computadoras son tontas bestias pedantes, programar
 es fundamentalmente tedioso y frustrante.
 
-{{index [programación, "el gozo de"], speed}}
+{{index [programación, "el gozo de"], velocidad}}
 
-Fortunately, if you can get over that, and maybe even enjoy the rigor
-of thinking in terms that dumb machines can deal with, programming can
-be very rewarding. It allows you make things that would take _forever_
-to do by hand happen in seconds. It is a way to make your computer
-tool do things that it couldn't do before. And it provides a wonderful
-exercise in abstract thinking.
+Afortunadamente, si puedes superarlo e, incluso, disfrutar del 
+rigor de pensar en términos que máquinas tontas puedan entender, la programación
+puede premiarte bien. Te permite hacer cosas en segundos que a mano te tomarían
+_una eternidad_. Es una forma de hacer que tu computadora como herramienta
+haga cosas que no podía hacer antes. Y es un muy buen ejercicio en pensamiento
+abstracto.
 
-Most programming is done with ((programming language))s. A programming
-language is an artificially constructed language used to instruct
-computers. It is interesting that the most effective way we've found
-to communicate with a computer borrows so heavily from the way we
-communicate with each other. Like human languages, computer languages
-allow words and phrases to be combined in new ways, allowing you to
-express ever new concepts.
+La mayor parat de la programación se hace con ((lenguajes de programación)).
+Un lenguaje de programación es un lenguaje construido artificialmente para
+darle instrucciones a las computadoras. Es interisenta que la forma más efectiva
+que hemos encontrado de comunicarnos con un a computadora tome prestado
+de la formas que nos comunicamos entre nosotros. Como los lenguajes humanos,
+los lenguajes de computadora permiten que frases y palabras sean combinadas
+de nuevas formas, permitiendo que siempre estés expresando nuevos conceptos.
 
-{{index [JavaScript, "availability of"], "casual computing"}}
+{{index [JavaScript, "disponibilidad"], "computación casual"}}
 
-Language-based interfaces, which at one point were the main way in
-which people interacted with computers, have largely been replaced
-with easier, more limited interfaces. But they are still there, if you
-know where to look. One such language, JavaScript, is built into every
-modern web ((browser)) and is thus available on almost every device.
+Las interfaces basadas en lenguajes, que en cierto punto fueron la forma principal
+en que las personas interactuaban con las computadoras, han sido en su
+mayoría reemplazados con interfaces más fáciles y limitadas. Pero siguen
+ahí, si sabes dónde buscar. Uno de estos lenguajes, JavaScript, está
+se encuentra en cada ((navegador)) web moderno y por lo tanto está
+disponible casi en todos los dispositivos.
 
-{{indexsee "web browser", browser}}
+{{indexsee "navegador web", nevegador}}
 
-This book will try to make you familiar enough with this language to
-do useful and amusing things with it.
+Este libro tratará de que te familiarices tanto con este lenguaje que
+puedas hacer cosas útiles y divertidas con él.
 
-## On programming
+## Acerca de la programación
 
-{{index [programming, "difficulty of"]}}
+{{index [programación, "dificultad de"]}}
 
-Besides explaining JavaScript, I will also introduce the basic
-principles of programming. Programming, it turns out, is hard. The
-fundamental rules are typically simple and clear. But programs built
-on top of these rules tend to become complex enough to introduce their
-own rules and complexity. You're building your own maze, in a way, and
-you might just get lost in it.
+Más allá de explicar JavaScript, te introduciré a los principios básicos
+de la programación. Programar, resulta, es difícil. Las reglas fundamentales
+son típicamente simples y claras. Pero los programas construidos
+sobre esas reglas tieneden a volverse lo suficientemente complejos
+para introducir sus propias reglas y complejidad. Estás construyendo tu
+propio laberinto y podrías perderte en él.
 
-{{index learning}}
+{{index aprendizaje}}
 
 There will be times when reading this book feels terribly frustrating.
 If you are new to programming, there will be a lot of new material to
