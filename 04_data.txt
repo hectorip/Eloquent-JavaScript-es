@@ -707,11 +707,12 @@ for (var event in correlations)
 // and so on...
 ----
 
-(((for/in loop)))Most correlations seem to lie close to zero. Eating
-carrots, bread, or pudding apparently does not trigger
-squirrel-lycanthropy. It _does_ seem to occur somewhat more often on
-weekends, however. Let's filter the results to show only correlations
-greater than 0.1 or less than -0.1.
+(((for/in loop)))La mayoría de las correlaciones están cerca de cero. 
+Comer zanahorias, pan o pudding aparentemente no desencadenan la 
+licantropía de la ardilla. Sin embargo, parece que sí ocurre más 
+frecuentemente los fines de semana de alguna manera. Filtremos los 
+resultados para mostrar sólo las correlaciones mayores que 0.1 o 
+menores que -0.1.
 
 // start_code
 // test: no
